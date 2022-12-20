@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.br-invert {
+  border-radius: 44% 56% 65% 35% / 27% 33% 67% 73%;
+}
+
+.product-list-container {
+  border: 1px solid;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.product-left-list {
+  border: 1px solid green;
+  width: 25%;
+}
+
+.product-right-list {
+  width: 75%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width:160px) and (max-width:800px) {
+  .product-left-list {
+    display: none;
+  }
+  .product-right-list {
+    width: 100%;
+  }
+}
+
+@media (max-width:767px) {
+  .product-right-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width:801px) and (max-width:1000px) {
+  .product-right-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width:475px) {
+  .product-right-list {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+span .MuiBadge-badge {
+  background-color: #463233;
+  color: white;
+}
